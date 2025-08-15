@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legit City Trading</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        color: white;
+        scroll-behavior: smooth;
+    }
+    header {
+        text-align: center;
+        padding: 50px 20px;
+        background: rgba(0,0,0,0.3);
+    }
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #ff9800;
+    }
+    header p {
+        font-size: 1.2rem;
+    }
+    .btn {
+        margin-top: 20px;
+        padding: 12px 20px;
+        background: #ff9800;
+        border: none;
+        color: white;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .btn:hover {
+        background: #e68900;
+    }
+    .courses {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    .course {
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        transition: transform 0.2s;
+    }
+    .course:hover {
+        transform: translateY(-5px);
+    }
+    .course img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+    .course-content {
+        padding: 15px;
+    }
+    .course-content h2 {
+        color: #ff9800;
+        margin: 0 0 10px;
+    }
+    .course-content p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    .course-content button {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background: #ff9800;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .course-content button:hover {
+        background: #e68900;
+    }
+    footer {
+        text-align: center;
+        padding: 15px;
+        background: rgba(0,0,0,0.3);
+        font-size: 0.9rem;
+        margin-top: 20px;
+    }
+    section {
+        padding: 40px 20px;
+    }
+</style>
+</head>
+<body>
+
+<!-- Home Section -->
+<header id="home">
+    <h1>Welcome to Legit City Trading</h1>
+    <p>Learn trading from basics to pro with real examples and live lessons.</p>
+    <a href="#courses" class="btn">Get Started</a>
+</header>
+
+<!-- Courses Section -->
+<section id="courses">
+    <h1 style="text-align:center; color:#ff9800;">Our Trading Courses</h1>
+    <p style="text-align:center; max-width:600px; margin:auto;">We provide a full learning journey from the basics of forex to advanced technical analysis, with real-world chart examples and risk management strategies.</p>
+    
+    <div class="courses">
+        <div class="course">
+            <img src="https://www.investopedia.com/thmb/TLWwFoFlYUpLZ63XEpUI8dAL5X0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/forex1-56bcd4d35f9b5829f838af65.jpg" alt="Forex Basics">
+            <div class="course-content">
+                <h2>Forex Trading Basics</h2>
+                <p>Understand currency pairs, pips, lot sizes, and how forex markets work.</p>
+                <button onclick="subscribeAlert('Forex Trading Basics')">View Course</button>
+            </div>
+        </div>
+
+        <div class="course">
+            <img src="https://www.investopedia.com/thmb/z88r1EvR2WWsP05qz30U1VfIn-8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/candlestick_5bfcf6a4c9e77c0026932e17.png" alt="Candlestick Charts">
+            <div class="course-content">
+                <h2>Candlestick Chart Patterns</h2>
+                <p>Learn how to read and interpret candlestick patterns for better entries and exits.</p>
+                <button onclick="subscribeAlert('Candlestick Chart Patterns')">View Course</button>
+            </div>
+        </div>
+
+        <div class="course">
+            <img src="https://www.investopedia.com/thmb/Km0e8UwD2NwTOB5-Dk5xVN1NNxU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/technical-analysis-strategy-overview-5186835-hero-1e73ef25a07a49d68a3b50a772b7f82e.png" alt="Technical Analysis">
+            <div class="course-content">
+                <h2>Technical Analysis</h2>
+                <p>Use indicators, support/resistance, and chart setups to make informed trades.</p>
+                <button onclick="subscribeAlert('Technical Analysis')">View Course</button>
+            </div>
+        </div>
+
+        <div class="course">
+            <img src="https://www.investopedia.com/thmb/C3yck1VnTzUuV2cdOcd1-rmoyqI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/riskmanagement-getty-1225151656-bfdcc9aaff5b467b8f14d4cd1bfa6b89.jpg" alt="Risk Management">
+            <div class="course-content">
+                <h2>Risk Management</h2>
+                <p>Learn how to protect your capital and grow it steadily through smart risk control.</p>
+                <button onclick="subscribeAlert('Risk Management')">View Course</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 Legit City Trading — All rights reserved
+</footer>
+
+<script>
+function subscribeAlert(courseName) {
+    alert(`To access '${courseName}', please subscribe to our live lessons.\n\nSend payment to:\nMpesa Paybill: 123456\nAccount: Legit City Trading\n\nThen email proof to: legitcity@example.com`);
+}
+</script>
+
+</body>
+</html>
