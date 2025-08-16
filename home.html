@@ -1,134 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legit City Trading Courses</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legit City</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-        color: white;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      overflow: hidden;
+      height: 100vh;
     }
-    header {
-        text-align: center;
-        padding: 20px;
-        background: rgba(0,0,0,0.3);
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1000;
     }
-    header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        color: #ff9800;
+
+    .navbar .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #ff9800, #ff4d4d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .courses {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 20px;
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
     }
-    .course {
-        background: rgba(255,255,255,0.05);
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-        transition: transform 0.2s;
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #e5e7eb;
+      font-weight: 500;
+      transition: 0.3s;
     }
-    .course:hover {
-        transform: translateY(-5px);
+
+    .navbar ul li a:hover {
+      color: #ff9800;
     }
-    .course img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
     }
-    .course-content {
-        padding: 15px;
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.2;
+      background: linear-gradient(90deg, #ff9800, #ff4d4d, #ff9800);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientFlow 5s infinite linear;
     }
-    .course-content h2 {
-        color: #ff9800;
-        margin: 0 0 10px;
+
+    @keyframes gradientFlow {
+      from { background-position: 0%; }
+      to { background-position: 200%; }
     }
-    .course-content p {
-        font-size: 0.95rem;
-        line-height: 1.4;
+
+    .hero p {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      color: #cbd5e1;
+      max-width: 600px;
     }
-    .course-content button {
-        margin-top: 10px;
-        padding: 10px 15px;
-        background: #ff9800;
-        border: none;
-        color: white;
-        font-size: 1rem;
-        border-radius: 5px;
-        cursor: pointer;
+
+    .hero button {
+      margin-top: 30px;
+      padding: 14px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(45deg, #ff9800, #ff4d4d);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
     }
-    .course-content button:hover {
-        background: #e68900;
+
+    .hero button:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 25px rgba(255, 152, 0, 0.5);
     }
-    footer {
-        text-align: center;
-        padding: 15px;
-        background: rgba(0,0,0,0.3);
-        font-size: 0.9rem;
-        margin-top: 20px;
+
+    /* Floating Shapes Animation */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      animation: float 8s infinite ease-in-out;
     }
-</style>
+
+    .shape1 {
+      width: 200px; height: 200px;
+      background: #ff9800;
+      top: 10%; left: 15%;
+      animation-delay: 0s;
+    }
+
+    .shape2 {
+      width: 300px; height: 300px;
+      background: #ff4d4d;
+      bottom: 10%; right: 10%;
+      animation-delay: 2s;
+    }
+
+    .shape3 {
+      width: 150px; height: 150px;
+      background: #4dd0e1;
+      top: 50%; right: 25%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>Legit City Trading Courses</h1>
-    <p>From beginner basics to pro strategies — with real chart examples</p>
-</header>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Legit City</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </nav>
 
-<section class="courses">
-    <div class="course">
-        <img src="https://www.investopedia.com/thmb/TLWwFoFlYUpLZ63XEpUI8dAL5X0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/forex1-56bcd4d35f9b5829f838af65.jpg" alt="Forex Basics">
-        <div class="course-content">
-            <h2>Forex Trading Basics</h2>
-            <p>Understand currency pairs, pips, lot sizes, and how forex markets work.</p>
-            <button onclick="subscribeAlert('Forex Trading Basics')">View Course</button>
-        </div>
-    </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Legit City</h1>
+    <p>The future of trading, marketing, and growth starts here.</p>
+    <button>Get Started</button>
 
-    <div class="course">
-        <img src="https://www.investopedia.com/thmb/z88r1EvR2WWsP05qz30U1VfIn-8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/candlestick_5bfcf6a4c9e77c0026932e17.png" alt="Candlestick Charts">
-        <div class="course-content">
-            <h2>Candlestick Chart Patterns</h2>
-            <p>Learn how to read and interpret candlestick patterns for better entries and exits.</p>
-            <button onclick="subscribeAlert('Candlestick Chart Patterns')">View Course</button>
-        </div>
-    </div>
-
-    <div class="course">
-        <img src="https://www.investopedia.com/thmb/Km0e8UwD2NwTOB5-Dk5xVN1NNxU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/technical-analysis-strategy-overview-5186835-hero-1e73ef25a07a49d68a3b50a772b7f82e.png" alt="Technical Analysis">
-        <div class="course-content">
-            <h2>Technical Analysis</h2>
-            <p>Use indicators, support/resistance, and chart setups to make informed trades.</p>
-            <button onclick="subscribeAlert('Technical Analysis')">View Course</button>
-        </div>
-    </div>
-
-    <div class="course">
-        <img src="https://www.investopedia.com/thmb/C3yck1VnTzUuV2cdOcd1-rmoyqI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/riskmanagement-getty-1225151656-bfdcc9aaff5b467b8f14d4cd1bfa6b89.jpg" alt="Risk Management">
-        <div class="course-content">
-            <h2>Risk Management</h2>
-            <p>Learn how to protect your capital and grow it steadily through smart risk control.</p>
-            <button onclick="subscribeAlert('Risk Management')">View Course</button>
-        </div>
-    </div>
-</section>
-
-<footer>
-    &copy; 2025 Legit City Trading — All rights reserved
-</footer>
-
-<script>
-function subscribeAlert(courseName) {
-    alert(`To access '${courseName}', please subscribe to our live lessons.\n\nSend payment to:\nMpesa Paybill: 123456\nAccount: Legit City Trading\n\nThen email proof to: legitcity@example.com`);
-}
-</script>
+    <!-- Animated Floating Shapes -->
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </section>
 
 </body>
 </html>
