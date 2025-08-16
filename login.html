@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legit City - Login / Register</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .container {
+      width: 400px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #ff9800, #ff4d4d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #ff9800, #ff4d4d);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .switch {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+
+    .switch a {
+      color: #ff9800;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .switch a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="authBox">
+    <!-- Login Form -->
+    <div id="loginForm">
+      <h2>Login</h2>
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        </select>
+        <button type="submit">Login</button>
+      </form>
+      <div class="switch">
+        Don't have an account? <a href="#" onclick="toggleForms()">Register</a>
+      </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerForm" style="display:none;">
+      <h2>Register</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <select required>
+          <option value="" disabled selected>Choose Account Type</option>
+          <option value="creator">Admin</option>
+          <option value="customer">User</option>
+        </select>
+        <button type="submit">Register</button>
+      </form>
+      <div class="switch">
+        Already have an account? <a href="#" onclick="toggleForms()">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleForms() {
+      document.getElementById("loginForm").style.display =
+        document.getElementById("loginForm").style.display === "none" ? "block" : "none";
+
+      document.getElementById("registerForm").style.display =
+        document.getElementById("registerForm").style.display === "none" ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>

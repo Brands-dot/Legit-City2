@@ -14,10 +14,22 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background: url('https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=1600&q=80') 
+        no-repeat center center/cover;
       color: #fff;
       overflow: hidden;
       height: 100vh;
+      position: relative;
+    }
+
+    /* Dark overlay so text is readable */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
     }
 
     /* Navbar */
@@ -29,7 +41,7 @@
       align-items: center;
       position: fixed;
       top: 0;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       z-index: 1000;
@@ -70,6 +82,7 @@
       text-align: center;
       padding: 0 20px;
       position: relative;
+      z-index: 1;
     }
 
     .hero h1 {
@@ -79,6 +92,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: gradientFlow 5s infinite linear;
+      background-size: 200%;
     }
 
     @keyframes gradientFlow {
@@ -116,6 +130,7 @@
       border-radius: 50%;
       opacity: 0.15;
       animation: float 8s infinite ease-in-out;
+      z-index: 0;
     }
 
     .shape1 {
@@ -151,17 +166,18 @@
   <nav class="navbar">
     <div class="logo">Legit City</div>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Support</a></li>
-      <li><a href="#">Login</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="support.html">Support</a></li>
     </ul>
   </nav>
 
   <!-- Hero Section -->
-  <div section class="hero">
+  <section class="hero">
     <h1>Welcome to Legit City</h1>
     <p>The future of trading, marketing, and growth starts here.</p>
-    <button onclick="window.location.href='services.html'">Get Started</button></div>
+    <button onclick="window.location.href='services.html'">Get Started</button>
 
     <!-- Animated Floating Shapes -->
     <div class="shape shape1"></div>
