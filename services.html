@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legit City</title>
+  <title>Legit City - Services</title>
   <style>
     /* Reset */
     * {
@@ -16,8 +16,7 @@
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #fff;
-      overflow: hidden;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     /* Navbar */
@@ -62,81 +61,78 @@
 
     /* Hero Section */
     .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding-top: 120px;
       text-align: center;
-      padding: 0 20px;
-      position: relative;
     }
 
     .hero h1 {
-      font-size: 4rem;
-      line-height: 1.2;
+      font-size: 3rem;
       background: linear-gradient(90deg, #ff9800, #ff4d4d, #ff9800);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: gradientFlow 5s infinite linear;
-    }
-
-    @keyframes gradientFlow {
-      from { background-position: 0%; }
-      to { background-position: 200%; }
+      display: inline-block;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      margin-top: 15px;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: #cbd5e1;
-      max-width: 600px;
     }
 
-    .hero button {
-      margin-top: 30px;
-      padding: 14px 30px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(45deg, #ff9800, #ff4d4d);
-      color: white;
-      cursor: pointer;
+    /* Services Grid */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 60px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
       transition: 0.3s;
+      cursor: pointer;
     }
 
-    .hero button:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 8px 25px rgba(255, 152, 0, 0.5);
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 30px rgba(255, 152, 0, 0.3);
     }
 
-    /* Floating Shapes Animation */
+    .service-card h2 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #ff9800;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
+
+    /* Floating Shapes */
     .shape {
       position: absolute;
       border-radius: 50%;
-      opacity: 0.15;
+      opacity: 0.1;
       animation: float 8s infinite ease-in-out;
     }
 
     .shape1 {
-      width: 200px; height: 200px;
+      width: 250px; height: 250px;
       background: #ff9800;
-      top: 10%; left: 15%;
+      top: 10%; left: 5%;
       animation-delay: 0s;
     }
 
     .shape2 {
       width: 300px; height: 300px;
       background: #ff4d4d;
-      bottom: 10%; right: 10%;
+      bottom: 5%; right: 10%;
       animation-delay: 2s;
-    }
-
-    .shape3 {
-      width: 150px; height: 150px;
-      background: #4dd0e1;
-      top: 50%; right: 25%;
-      animation-delay: 4s;
     }
 
     @keyframes float {
@@ -151,23 +147,50 @@
   <nav class="navbar">
     <div class="logo">Legit City</div>
     <ul>
-      <li><a href="#">Home</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="#">Support</a></li>
       <li><a href="#">Login</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <div section class="hero">
-    <h1>Welcome to Legit City</h1>
-    <p>The future of trading, marketing, and growth starts here.</p>
-    <button onclick="window.location.href='services.html'">Get Started</button></div>
-
-    <!-- Animated Floating Shapes -->
-    <div class="shape shape1"></div>
-    <div class="shape shape2"></div>
-    <div class="shape shape3"></div>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Our Services</h1>
+    <p>Explore everything Legit City has to offer.</p>
   </section>
+
+  <!-- Services Grid -->
+  <section class="services">
+    <div class="service-card">
+      <h2>Trader's Hub</h2>
+      <p>Learn trading strategies, view live charts, and sharpen your financial skills.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Photo Shop</h2>
+      <p>High-quality photo editing and digital design services for your brand.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Website Hub</h2>
+      <p>Custom website development to grow your online presence with style.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Marketing</h2>
+      <p>Boost your business with digital marketing strategies that work.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Subscription Plans</h2>
+      <p>Join our premium community and get exclusive lessons and support.</p>
+    </div>
+  </section>
+
+  <!-- Floating Shapes -->
+  <div class="shape shape1"></div>
+  <div class="shape shape2"></div>
 
 </body>
 </html>
